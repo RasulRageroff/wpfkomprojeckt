@@ -1,0 +1,32 @@
+﻿<Window x:Class="komproject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:komproject"
+        mc:Ignorable="d"
+        Title="Rasul PC" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="174*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="./Resources/rapc.jpg" Width="150"/>
+                <Image Source="./Resources/731984.png"/>
+                <Image Source="./Resources/2.png"/>
+                <Image Width="150" Source="./Resources/as.png"/>
+                
+                <TextBlock FontFamily="Segoe Print" FontSize="20" Foreground="BlueViolet" Background="Black" VerticalAlignment="Center" Margin="20 0 0 0" Text="{Binding ElementName=FrmMain, Path=Content.Title}"></TextBlock>
+            </StackPanel>
+            
+        </StackPanel>
+        <Frame
+          NavigationUIVisibility="Hidden"
+          Name="FrmMain"
+          Grid.Column="1"
+          Grid.Row="1"
+          Background="Lime"/>
+    </Grid>
+</Window>

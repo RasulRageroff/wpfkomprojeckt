@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище RasulpcModelContainer" CdmEntityContainer="RasulpcEntities">
+    <EntitySetMapping Name="CaseForm">
+      <EntityTypeMapping TypeName="RasulpcModel.CaseForm">
+        <MappingFragment StoreEntitySet="CaseForm">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cooling">
+      <EntityTypeMapping TypeName="RasulpcModel.Cooling">
+        <MappingFragment StoreEntitySet="Cooling">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CPU">
+      <EntityTypeMapping TypeName="RasulpcModel.CPU">
+        <MappingFragment StoreEntitySet="CPU">
+          <ScalarProperty Name="IdSocket" ColumnName="IdSocket" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="Idmanufacturer" ColumnName="Idmanufacturer" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CPUmanufacturer">
+      <EntityTypeMapping TypeName="RasulpcModel.CPUmanufacturer">
+        <MappingFragment StoreEntitySet="CPUmanufacturer">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HDD">
+      <EntityTypeMapping TypeName="RasulpcModel.HDD">
+        <MappingFragment StoreEntitySet="HDD">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IdCases">
+      <EntityTypeMapping TypeName="RasulpcModel.IdCases">
+        <MappingFragment StoreEntitySet="IdCases">
+          <ScalarProperty Name="IdForm" ColumnName="IdForm" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IdSocket">
+      <EntityTypeMapping TypeName="RasulpcModel.IdSocket">
+        <MappingFragment StoreEntitySet="IdSocket">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="memorytype">
+      <EntityTypeMapping TypeName="RasulpcModel.memorytype">
+        <MappingFragment StoreEntitySet="memorytype">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Motherboard">
+      <EntityTypeMapping TypeName="RasulpcModel.Motherboard">
+        <MappingFragment StoreEntitySet="Motherboard">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="IdSocket" ColumnName="IdSocket" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PC">
+      <EntityTypeMapping TypeName="RasulpcModel.PC">
+        <MappingFragment StoreEntitySet="PC">
+          <ScalarProperty Name="IdCases" ColumnName="IdCases" />
+          <ScalarProperty Name="IdCooling" ColumnName="IdCooling" />
+          <ScalarProperty Name="IdSSD" ColumnName="IdSSD" />
+          <ScalarProperty Name="IdHDD" ColumnName="IdHDD" />
+          <ScalarProperty Name="IdPCPOWERSupplyUNIT" ColumnName="IdPCPOWERSupplyUNIT" />
+          <ScalarProperty Name="IdRAM" ColumnName="IdRAM" />
+          <ScalarProperty Name="IdVideocard" ColumnName="IdVideocard" />
+          <ScalarProperty Name="IdMotherboard" ColumnName="IdMotherboard" />
+          <ScalarProperty Name="IdCPU" ColumnName="IdCPU" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IdPc" ColumnName="IdPc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pcpowersupply">
+      <EntityTypeMapping TypeName="RasulpcModel.pcpowersupply">
+        <MappingFragment StoreEntitySet="pcpowersupply">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RAM">
+      <EntityTypeMapping TypeName="RasulpcModel.RAM">
+        <MappingFragment StoreEntitySet="RAM">
+          <ScalarProperty Name="Idtype" ColumnName="Idtype" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="RasulpcModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SSD">
+      <EntityTypeMapping TypeName="RasulpcModel.SSD">
+        <MappingFragment StoreEntitySet="SSD">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="RasulpcModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="RasulpcModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Videocard">
+      <EntityTypeMapping TypeName="RasulpcModel.Videocard">
+        <MappingFragment StoreEntitySet="Videocard">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

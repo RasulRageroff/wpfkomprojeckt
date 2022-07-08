@@ -1,0 +1,1074 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище RasulpcModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Case">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="int" />
+          <Property Name="IdForm" Type="int" />
+        </EntityType>
+        <EntityType Name="CaseForm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Cooling">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="350" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <EntityType Name="CPU">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Idmanufacturer" Type="int" Nullable="false" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" />
+          <Property Name="price" Type="int" />
+          <Property Name="IdSocket" Type="int" />
+        </EntityType>
+        <EntityType Name="CPUmanufacturer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="HDD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <EntityType Name="IdSocket">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="memorytype">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Motherboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdSocket" Type="int" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <EntityType Name="PC">
+          <Key>
+            <PropertyRef Name="IdPc" />
+            <PropertyRef Name="IdCPU" />
+            <PropertyRef Name="IdMotherboard" />
+            <PropertyRef Name="IdVideocard" />
+            <PropertyRef Name="IdRAM" />
+            <PropertyRef Name="IdPCPOWERSupplyUNIT" />
+            <PropertyRef Name="IdHDD" />
+            <PropertyRef Name="IdSSD" />
+            <PropertyRef Name="IdCooling" />
+            <PropertyRef Name="IdCase" />
+          </Key>
+          <Property Name="IdPc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdCPU" Type="int" Nullable="false" />
+          <Property Name="IdMotherboard" Type="int" Nullable="false" />
+          <Property Name="IdVideocard" Type="int" Nullable="false" />
+          <Property Name="IdRAM" Type="int" Nullable="false" />
+          <Property Name="IdPCPOWERSupplyUNIT" Type="int" Nullable="false" />
+          <Property Name="IdHDD" Type="int" Nullable="false" />
+          <Property Name="IdSSD" Type="int" Nullable="false" />
+          <Property Name="IdCooling" Type="int" Nullable="false" />
+          <Property Name="IdCase" Type="int" Nullable="false" />
+          <Property Name="price" Type="int" />
+          <Property Name="likes" Type="int" />
+        </EntityType>
+        <EntityType Name="pcpowersupply">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <EntityType Name="RAM">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Idtype" Type="int" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SSD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdRole" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Videocard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <Association Name="FK_Case_CaseForm">
+          <End Role="CaseForm" Type="Self.CaseForm" Multiplicity="0..1" />
+          <End Role="Case" Type="Self.Case" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CaseForm">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Case">
+              <PropertyRef Name="IdForm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPU_CPUmanufacturer1">
+          <End Role="CPUmanufacturer" Type="Self.CPUmanufacturer" Multiplicity="1" />
+          <End Role="CPU" Type="Self.CPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CPUmanufacturer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CPU">
+              <PropertyRef Name="Idmanufacturer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPU_IdSocket">
+          <End Role="IdSocket" Type="Self.IdSocket" Multiplicity="0..1" />
+          <End Role="CPU" Type="Self.CPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdSocket">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CPU">
+              <PropertyRef Name="IdSocket" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboard_IdSocket1">
+          <End Role="IdSocket" Type="Self.IdSocket" Multiplicity="0..1" />
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdSocket">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Motherboard">
+              <PropertyRef Name="IdSocket" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_Case">
+          <End Role="Case" Type="Self.Case" Multiplicity="1" />
+          <End Role="PC" Type="Self.PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Case">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdCase" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_Cooling">
+          <End Role="Cooling" Type="Self.Cooling" Multiplicity="1" />
+          <End Role="PC" Type="Self.PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cooling">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdCooling" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_CPU">
+          <End Role="CPU" Type="Self.CPU" Multiplicity="1" />
+          <End Role="PC" Type="Self.PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CPU">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdCPU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_HDD">
+          <End Role="HDD" Type="Self.HDD" Multiplicity="1" />
+          <End Role="PC" Type="Self.PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HDD">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdHDD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_Motherboard">
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="1" />
+          <End Role="PC" Type="Self.PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motherboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdMotherboard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_pcpowersupply">
+          <End Role="pcpowersupply" Type="Self.pcpowersupply" Multiplicity="1" />
+          <End Role="PC" Type="Self.PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pcpowersupply">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdPCPOWERSupplyUNIT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_RAM">
+          <End Role="RAM" Type="Self.RAM" Multiplicity="1" />
+          <End Role="PC" Type="Self.PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAM">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdRAM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_SSD">
+          <End Role="SSD" Type="Self.SSD" Multiplicity="1" />
+          <End Role="PC" Type="Self.PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SSD">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdSSD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_Videocard">
+          <End Role="Videocard" Type="Self.Videocard" Multiplicity="1" />
+          <End Role="PC" Type="Self.PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Videocard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdVideocard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM_memorytype">
+          <End Role="memorytype" Type="Self.memorytype" Multiplicity="0..1" />
+          <End Role="RAM" Type="Self.RAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="memorytype">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RAM">
+              <PropertyRef Name="Idtype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище RasulpcModelContainer">
+          <EntitySet Name="Case" EntityType="Self.Case" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CaseForm" EntityType="Self.CaseForm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cooling" EntityType="Self.Cooling" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CPU" EntityType="Self.CPU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CPUmanufacturer" EntityType="Self.CPUmanufacturer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HDD" EntityType="Self.HDD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IdSocket" EntityType="Self.IdSocket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="memorytype" EntityType="Self.memorytype" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Motherboard" EntityType="Self.Motherboard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PC" EntityType="Self.PC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pcpowersupply" EntityType="Self.pcpowersupply" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RAM" EntityType="Self.RAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SSD" EntityType="Self.SSD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Videocard" EntityType="Self.Videocard" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Case_CaseForm" Association="Self.FK_Case_CaseForm">
+            <End Role="CaseForm" EntitySet="CaseForm" />
+            <End Role="Case" EntitySet="Case" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPU_CPUmanufacturer1" Association="Self.FK_CPU_CPUmanufacturer1">
+            <End Role="CPUmanufacturer" EntitySet="CPUmanufacturer" />
+            <End Role="CPU" EntitySet="CPU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPU_IdSocket" Association="Self.FK_CPU_IdSocket">
+            <End Role="IdSocket" EntitySet="IdSocket" />
+            <End Role="CPU" EntitySet="CPU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboard_IdSocket1" Association="Self.FK_Motherboard_IdSocket1">
+            <End Role="IdSocket" EntitySet="IdSocket" />
+            <End Role="Motherboard" EntitySet="Motherboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_Case" Association="Self.FK_PC_Case">
+            <End Role="Case" EntitySet="Case" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_Cooling" Association="Self.FK_PC_Cooling">
+            <End Role="Cooling" EntitySet="Cooling" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_CPU" Association="Self.FK_PC_CPU">
+            <End Role="CPU" EntitySet="CPU" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_HDD" Association="Self.FK_PC_HDD">
+            <End Role="HDD" EntitySet="HDD" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_Motherboard" Association="Self.FK_PC_Motherboard">
+            <End Role="Motherboard" EntitySet="Motherboard" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_pcpowersupply" Association="Self.FK_PC_pcpowersupply">
+            <End Role="pcpowersupply" EntitySet="pcpowersupply" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_RAM" Association="Self.FK_PC_RAM">
+            <End Role="RAM" EntitySet="RAM" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_SSD" Association="Self.FK_PC_SSD">
+            <End Role="SSD" EntitySet="SSD" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_Videocard" Association="Self.FK_PC_Videocard">
+            <End Role="Videocard" EntitySet="Videocard" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM_memorytype" Association="Self.FK_RAM_memorytype">
+            <End Role="memorytype" EntitySet="memorytype" />
+            <End Role="RAM" EntitySet="RAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RasulpcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="RasulpcEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Case" EntityType="RasulpcModel.Case" />
+          <EntitySet Name="CaseForm" EntityType="RasulpcModel.CaseForm" />
+          <EntitySet Name="Cooling" EntityType="RasulpcModel.Cooling" />
+          <EntitySet Name="CPU" EntityType="RasulpcModel.CPU" />
+          <EntitySet Name="CPUmanufacturer" EntityType="RasulpcModel.CPUmanufacturer" />
+          <EntitySet Name="HDD" EntityType="RasulpcModel.HDD" />
+          <EntitySet Name="IdSocket" EntityType="RasulpcModel.IdSocket" />
+          <EntitySet Name="memorytype" EntityType="RasulpcModel.memorytype" />
+          <EntitySet Name="Motherboard" EntityType="RasulpcModel.Motherboard" />
+          <EntitySet Name="PC" EntityType="RasulpcModel.PC" />
+          <EntitySet Name="pcpowersupply" EntityType="RasulpcModel.pcpowersupply" />
+          <EntitySet Name="RAM" EntityType="RasulpcModel.RAM" />
+          <EntitySet Name="Role" EntityType="RasulpcModel.Role" />
+          <EntitySet Name="SSD" EntityType="RasulpcModel.SSD" />
+          <EntitySet Name="sysdiagrams" EntityType="RasulpcModel.sysdiagrams" />
+          <EntitySet Name="User" EntityType="RasulpcModel.User" />
+          <EntitySet Name="Videocard" EntityType="RasulpcModel.Videocard" />
+          <AssociationSet Name="FK_Case_CaseForm" Association="RasulpcModel.FK_Case_CaseForm">
+            <End Role="CaseForm" EntitySet="CaseForm" />
+            <End Role="Case" EntitySet="Case" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_Case" Association="RasulpcModel.FK_PC_Case">
+            <End Role="Case" EntitySet="Case" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_Cooling" Association="RasulpcModel.FK_PC_Cooling">
+            <End Role="Cooling" EntitySet="Cooling" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPU_CPUmanufacturer1" Association="RasulpcModel.FK_CPU_CPUmanufacturer1">
+            <End Role="CPUmanufacturer" EntitySet="CPUmanufacturer" />
+            <End Role="CPU" EntitySet="CPU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPU_IdSocket" Association="RasulpcModel.FK_CPU_IdSocket">
+            <End Role="IdSocket" EntitySet="IdSocket" />
+            <End Role="CPU" EntitySet="CPU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_CPU" Association="RasulpcModel.FK_PC_CPU">
+            <End Role="CPU" EntitySet="CPU" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_HDD" Association="RasulpcModel.FK_PC_HDD">
+            <End Role="HDD" EntitySet="HDD" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboard_IdSocket1" Association="RasulpcModel.FK_Motherboard_IdSocket1">
+            <End Role="IdSocket" EntitySet="IdSocket" />
+            <End Role="Motherboard" EntitySet="Motherboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM_memorytype" Association="RasulpcModel.FK_RAM_memorytype">
+            <End Role="memorytype" EntitySet="memorytype" />
+            <End Role="RAM" EntitySet="RAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_Motherboard" Association="RasulpcModel.FK_PC_Motherboard">
+            <End Role="Motherboard" EntitySet="Motherboard" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_pcpowersupply" Association="RasulpcModel.FK_PC_pcpowersupply">
+            <End Role="pcpowersupply" EntitySet="pcpowersupply" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_RAM" Association="RasulpcModel.FK_PC_RAM">
+            <End Role="RAM" EntitySet="RAM" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_SSD" Association="RasulpcModel.FK_PC_SSD">
+            <End Role="SSD" EntitySet="SSD" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PC_Videocard" Association="RasulpcModel.FK_PC_Videocard">
+            <End Role="Videocard" EntitySet="Videocard" />
+            <End Role="PC" EntitySet="PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="RasulpcModel.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Case">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="IdForm" Type="Int32" />
+          <NavigationProperty Name="CaseForm" Relationship="RasulpcModel.FK_Case_CaseForm" FromRole="Case" ToRole="CaseForm" />
+          <NavigationProperty Name="PC" Relationship="RasulpcModel.FK_PC_Case" FromRole="Case" ToRole="PC" />
+        </EntityType>
+        <EntityType Name="CaseForm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Case" Relationship="RasulpcModel.FK_Case_CaseForm" FromRole="CaseForm" ToRole="Case" />
+        </EntityType>
+        <EntityType Name="Cooling">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <NavigationProperty Name="PC" Relationship="RasulpcModel.FK_PC_Cooling" FromRole="Cooling" ToRole="PC" />
+        </EntityType>
+        <EntityType Name="CPU">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Idmanufacturer" Type="Int32" Nullable="false" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Int32" />
+          <Property Name="IdSocket" Type="Int32" />
+          <NavigationProperty Name="CPUmanufacturer" Relationship="RasulpcModel.FK_CPU_CPUmanufacturer1" FromRole="CPU" ToRole="CPUmanufacturer" />
+          <NavigationProperty Name="IdSocket1" Relationship="RasulpcModel.FK_CPU_IdSocket" FromRole="CPU" ToRole="IdSocket" />
+          <NavigationProperty Name="PC" Relationship="RasulpcModel.FK_PC_CPU" FromRole="CPU" ToRole="PC" />
+        </EntityType>
+        <EntityType Name="CPUmanufacturer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CPU" Relationship="RasulpcModel.FK_CPU_CPUmanufacturer1" FromRole="CPUmanufacturer" ToRole="CPU" />
+        </EntityType>
+        <EntityType Name="HDD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <NavigationProperty Name="PC" Relationship="RasulpcModel.FK_PC_HDD" FromRole="HDD" ToRole="PC" />
+        </EntityType>
+        <EntityType Name="IdSocket">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CPU" Relationship="RasulpcModel.FK_CPU_IdSocket" FromRole="IdSocket" ToRole="CPU" />
+          <NavigationProperty Name="Motherboard" Relationship="RasulpcModel.FK_Motherboard_IdSocket1" FromRole="IdSocket" ToRole="Motherboard" />
+        </EntityType>
+        <EntityType Name="memorytype">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="RAM" Relationship="RasulpcModel.FK_RAM_memorytype" FromRole="memorytype" ToRole="RAM" />
+        </EntityType>
+        <EntityType Name="Motherboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdSocket" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <NavigationProperty Name="IdSocket1" Relationship="RasulpcModel.FK_Motherboard_IdSocket1" FromRole="Motherboard" ToRole="IdSocket" />
+          <NavigationProperty Name="PC" Relationship="RasulpcModel.FK_PC_Motherboard" FromRole="Motherboard" ToRole="PC" />
+        </EntityType>
+        <EntityType Name="PC">
+          <Key>
+            <PropertyRef Name="IdPc" />
+            <PropertyRef Name="IdCPU" />
+            <PropertyRef Name="IdMotherboard" />
+            <PropertyRef Name="IdVideocard" />
+            <PropertyRef Name="IdRAM" />
+            <PropertyRef Name="IdPCPOWERSupplyUNIT" />
+            <PropertyRef Name="IdHDD" />
+            <PropertyRef Name="IdSSD" />
+            <PropertyRef Name="IdCooling" />
+            <PropertyRef Name="IdCase" />
+          </Key>
+          <Property Name="IdPc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdCPU" Type="Int32" Nullable="false" />
+          <Property Name="IdMotherboard" Type="Int32" Nullable="false" />
+          <Property Name="IdVideocard" Type="Int32" Nullable="false" />
+          <Property Name="IdRAM" Type="Int32" Nullable="false" />
+          <Property Name="IdPCPOWERSupplyUNIT" Type="Int32" Nullable="false" />
+          <Property Name="IdHDD" Type="Int32" Nullable="false" />
+          <Property Name="IdSSD" Type="Int32" Nullable="false" />
+          <Property Name="IdCooling" Type="Int32" Nullable="false" />
+          <Property Name="IdCase" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Int32" />
+          <Property Name="likes" Type="Int32" />
+          <NavigationProperty Name="Case" Relationship="RasulpcModel.FK_PC_Case" FromRole="PC" ToRole="Case" />
+          <NavigationProperty Name="Cooling" Relationship="RasulpcModel.FK_PC_Cooling" FromRole="PC" ToRole="Cooling" />
+          <NavigationProperty Name="CPU" Relationship="RasulpcModel.FK_PC_CPU" FromRole="PC" ToRole="CPU" />
+          <NavigationProperty Name="HDD" Relationship="RasulpcModel.FK_PC_HDD" FromRole="PC" ToRole="HDD" />
+          <NavigationProperty Name="Motherboard" Relationship="RasulpcModel.FK_PC_Motherboard" FromRole="PC" ToRole="Motherboard" />
+          <NavigationProperty Name="pcpowersupply" Relationship="RasulpcModel.FK_PC_pcpowersupply" FromRole="PC" ToRole="pcpowersupply" />
+          <NavigationProperty Name="RAM" Relationship="RasulpcModel.FK_PC_RAM" FromRole="PC" ToRole="RAM" />
+          <NavigationProperty Name="SSD" Relationship="RasulpcModel.FK_PC_SSD" FromRole="PC" ToRole="SSD" />
+          <NavigationProperty Name="Videocard" Relationship="RasulpcModel.FK_PC_Videocard" FromRole="PC" ToRole="Videocard" />
+        </EntityType>
+        <EntityType Name="pcpowersupply">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <NavigationProperty Name="PC" Relationship="RasulpcModel.FK_PC_pcpowersupply" FromRole="pcpowersupply" ToRole="PC" />
+        </EntityType>
+        <EntityType Name="RAM">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Idtype" Type="Int32" />
+          <NavigationProperty Name="memorytype" Relationship="RasulpcModel.FK_RAM_memorytype" FromRole="RAM" ToRole="memorytype" />
+          <NavigationProperty Name="PC" Relationship="RasulpcModel.FK_PC_RAM" FromRole="RAM" ToRole="PC" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="RasulpcModel.FK_User_Role" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="SSD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <NavigationProperty Name="PC" Relationship="RasulpcModel.FK_PC_SSD" FromRole="SSD" ToRole="PC" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdRole" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="RasulpcModel.FK_User_Role" FromRole="User" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="Videocard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <NavigationProperty Name="PC" Relationship="RasulpcModel.FK_PC_Videocard" FromRole="Videocard" ToRole="PC" />
+        </EntityType>
+        <Association Name="FK_Case_CaseForm">
+          <End Type="RasulpcModel.CaseForm" Role="CaseForm" Multiplicity="0..1" />
+          <End Type="RasulpcModel.Case" Role="Case" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CaseForm">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Case">
+              <PropertyRef Name="IdForm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_Case">
+          <End Type="RasulpcModel.Case" Role="Case" Multiplicity="1" />
+          <End Type="RasulpcModel.PC" Role="PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Case">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdCase" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_Cooling">
+          <End Type="RasulpcModel.Cooling" Role="Cooling" Multiplicity="1" />
+          <End Type="RasulpcModel.PC" Role="PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cooling">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdCooling" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPU_CPUmanufacturer1">
+          <End Type="RasulpcModel.CPUmanufacturer" Role="CPUmanufacturer" Multiplicity="1" />
+          <End Type="RasulpcModel.CPU" Role="CPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CPUmanufacturer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CPU">
+              <PropertyRef Name="Idmanufacturer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPU_IdSocket">
+          <End Type="RasulpcModel.IdSocket" Role="IdSocket" Multiplicity="0..1" />
+          <End Type="RasulpcModel.CPU" Role="CPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdSocket">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CPU">
+              <PropertyRef Name="IdSocket" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_CPU">
+          <End Type="RasulpcModel.CPU" Role="CPU" Multiplicity="1" />
+          <End Type="RasulpcModel.PC" Role="PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CPU">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdCPU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_HDD">
+          <End Type="RasulpcModel.HDD" Role="HDD" Multiplicity="1" />
+          <End Type="RasulpcModel.PC" Role="PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HDD">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdHDD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboard_IdSocket1">
+          <End Type="RasulpcModel.IdSocket" Role="IdSocket" Multiplicity="0..1" />
+          <End Type="RasulpcModel.Motherboard" Role="Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IdSocket">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Motherboard">
+              <PropertyRef Name="IdSocket" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM_memorytype">
+          <End Type="RasulpcModel.memorytype" Role="memorytype" Multiplicity="0..1" />
+          <End Type="RasulpcModel.RAM" Role="RAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="memorytype">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RAM">
+              <PropertyRef Name="Idtype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_Motherboard">
+          <End Type="RasulpcModel.Motherboard" Role="Motherboard" Multiplicity="1" />
+          <End Type="RasulpcModel.PC" Role="PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motherboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdMotherboard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_pcpowersupply">
+          <End Type="RasulpcModel.pcpowersupply" Role="pcpowersupply" Multiplicity="1" />
+          <End Type="RasulpcModel.PC" Role="PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pcpowersupply">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdPCPOWERSupplyUNIT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_RAM">
+          <End Type="RasulpcModel.RAM" Role="RAM" Multiplicity="1" />
+          <End Type="RasulpcModel.PC" Role="PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAM">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdRAM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_SSD">
+          <End Type="RasulpcModel.SSD" Role="SSD" Multiplicity="1" />
+          <End Type="RasulpcModel.PC" Role="PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SSD">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdSSD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PC_Videocard">
+          <End Type="RasulpcModel.Videocard" Role="Videocard" Multiplicity="1" />
+          <End Type="RasulpcModel.PC" Role="PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Videocard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PC">
+              <PropertyRef Name="IdVideocard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Type="RasulpcModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="RasulpcModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище RasulpcModelContainer" CdmEntityContainer="RasulpcEntities1">
+          <EntitySetMapping Name="Case">
+            <EntityTypeMapping TypeName="RasulpcModel.Case">
+              <MappingFragment StoreEntitySet="Case">
+                <ScalarProperty Name="IdForm" ColumnName="IdForm" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CaseForm">
+            <EntityTypeMapping TypeName="RasulpcModel.CaseForm">
+              <MappingFragment StoreEntitySet="CaseForm">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cooling">
+            <EntityTypeMapping TypeName="RasulpcModel.Cooling">
+              <MappingFragment StoreEntitySet="Cooling">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CPU">
+            <EntityTypeMapping TypeName="RasulpcModel.CPU">
+              <MappingFragment StoreEntitySet="CPU">
+                <ScalarProperty Name="IdSocket" ColumnName="IdSocket" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="Idmanufacturer" ColumnName="Idmanufacturer" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CPUmanufacturer">
+            <EntityTypeMapping TypeName="RasulpcModel.CPUmanufacturer">
+              <MappingFragment StoreEntitySet="CPUmanufacturer">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HDD">
+            <EntityTypeMapping TypeName="RasulpcModel.HDD">
+              <MappingFragment StoreEntitySet="HDD">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IdSocket">
+            <EntityTypeMapping TypeName="RasulpcModel.IdSocket">
+              <MappingFragment StoreEntitySet="IdSocket">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="memorytype">
+            <EntityTypeMapping TypeName="RasulpcModel.memorytype">
+              <MappingFragment StoreEntitySet="memorytype">
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Motherboard">
+            <EntityTypeMapping TypeName="RasulpcModel.Motherboard">
+              <MappingFragment StoreEntitySet="Motherboard">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="IdSocket" ColumnName="IdSocket" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PC">
+            <EntityTypeMapping TypeName="RasulpcModel.PC">
+              <MappingFragment StoreEntitySet="PC">
+                <ScalarProperty Name="likes" ColumnName="likes" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="IdCase" ColumnName="IdCase" />
+                <ScalarProperty Name="IdCooling" ColumnName="IdCooling" />
+                <ScalarProperty Name="IdSSD" ColumnName="IdSSD" />
+                <ScalarProperty Name="IdHDD" ColumnName="IdHDD" />
+                <ScalarProperty Name="IdPCPOWERSupplyUNIT" ColumnName="IdPCPOWERSupplyUNIT" />
+                <ScalarProperty Name="IdRAM" ColumnName="IdRAM" />
+                <ScalarProperty Name="IdVideocard" ColumnName="IdVideocard" />
+                <ScalarProperty Name="IdMotherboard" ColumnName="IdMotherboard" />
+                <ScalarProperty Name="IdCPU" ColumnName="IdCPU" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IdPc" ColumnName="IdPc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pcpowersupply">
+            <EntityTypeMapping TypeName="RasulpcModel.pcpowersupply">
+              <MappingFragment StoreEntitySet="pcpowersupply">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RAM">
+            <EntityTypeMapping TypeName="RasulpcModel.RAM">
+              <MappingFragment StoreEntitySet="RAM">
+                <ScalarProperty Name="Idtype" ColumnName="Idtype" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="RasulpcModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SSD">
+            <EntityTypeMapping TypeName="RasulpcModel.SSD">
+              <MappingFragment StoreEntitySet="SSD">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="RasulpcModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="RasulpcModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Videocard">
+            <EntityTypeMapping TypeName="RasulpcModel.Videocard">
+              <MappingFragment StoreEntitySet="Videocard">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

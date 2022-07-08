@@ -1,0 +1,67 @@
+﻿<Page x:Class="komproject.Pages.PageCreatepc"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:komproject.Pages"
+      mc:Ignorable="d" 
+      FontFamily="Segoe Print"
+      
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Собрать комп">
+
+    <Grid Background="#FF320696">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="5">
+            <Button  Name="BtnGoback" Click="BtnGoback_Click" Width="50" Height="35" Margin="5" Background="OrangeRed" FontFamily="Segoe Print">Назад</Button>
+
+        </StackPanel>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0">
+            <StackPanel Orientation="Horizontal" Margin="8">
+                <TextBlock  Text="Название" Width="155"/>
+                <TextBox Name="Namepc" Width="120"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="8">
+                <TextBlock  Text="Процессор" Width="155"/>
+                <ComboBox Width="120" Name="CmbCPU" SelectionChanged="CmbCPU_SelectionChanged"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="8">
+                <TextBlock  Text="Материнская Плата" Width="155"/>
+                <ComboBox Width="120" Name="CmbMth"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="8">
+                <TextBlock  Text="Видеокарта" Width="155"/>
+                <ComboBox Width="120" Name="CmbGPU"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="8">
+                <TextBlock  Text="Оперативная память" Width="155"/>
+                <ComboBox Width="120" Name="CmbOP"/>
+                <TextBlock Text="Цена ПК: " Margin="10 0 0 0"/>
+                <TextBlock Text=""  Name="pricepc"  Margin="10 0 0 0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="8">
+                <TextBlock  Text="Блок питания" Width="155"/>
+                <ComboBox Width="120" Name="Cmbbp"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="8">
+                <TextBlock  Text="Жесткий диск" Width="155"/>
+                <ComboBox Width="120" Name="CmbHDD"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="8">
+                <TextBlock  Text="SSD накопитель" Width="155"/>
+                <ComboBox Width="120" Name="CmbSSD"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="8">
+                <TextBlock  Text="CPU кулер" Width="155"/>
+                <ComboBox Width="120" Name="CmbCPUCooler"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="8">
+                <TextBlock  Text="Коробка" Width="155"/>
+                <ComboBox Width="120" Name="CmbCase"/>
+        
+            </StackPanel>
+            <Button Name="btncreatepc" Click="btncreatepc_Click" Content="Создать" Background="#FF15F315" Width="100"></Button>
+        </StackPanel>
+        
+
+    </Grid>
+</Page>
