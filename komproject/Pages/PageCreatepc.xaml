@@ -10,7 +10,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Собрать комп">
 
-    <Grid Background="#FF320696">
+    <Grid Background="white">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="5">
             <Button  Name="BtnGoback" Click="BtnGoback_Click" Width="50" Height="35" Margin="5" Background="OrangeRed" FontFamily="Segoe Print">Назад</Button>
 
@@ -26,37 +26,39 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="8">
                 <TextBlock  Text="Материнская Плата" Width="155"/>
-                <ComboBox Width="120" Name="CmbMth"/>
+                <ComboBox Width="120" Name="CmbMth"
+                          SelectionChanged="CmbMth_SelectionChanged"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="8">
                 <TextBlock  Text="Видеокарта" Width="155"/>
-                <ComboBox Width="120" Name="CmbGPU"/>
+                <ComboBox Width="120" Name="CmbGPU"
+                          SelectionChanged="CmbGPU_SelectionChanged"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="8">
                 <TextBlock  Text="Оперативная память" Width="155"/>
-                <ComboBox Width="120" Name="CmbOP"/>
+                <ComboBox Width="120" Name="CmbOP" SelectionChanged="CmbOP_SelectionChanged"/>
                 <TextBlock Text="Цена ПК: " Margin="10 0 0 0"/>
                 <TextBlock Text=""  Name="pricepc"  Margin="10 0 0 0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="8">
                 <TextBlock  Text="Блок питания" Width="155"/>
-                <ComboBox Width="120" Name="Cmbbp"/>
+                <ComboBox Width="120" Name="Cmbbp" SelectionChanged="Cmbbp_SelectionChanged"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="8">
                 <TextBlock  Text="Жесткий диск" Width="155"/>
-                <ComboBox Width="120" Name="CmbHDD"/>
+                <ComboBox Width="120" Name="CmbHDD" SelectionChanged="CmbHDD_SelectionChanged"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="8">
                 <TextBlock  Text="SSD накопитель" Width="155"/>
-                <ComboBox Width="120" Name="CmbSSD"/>
+                <ComboBox Width="120" Name="CmbSSD" SelectionChanged="CmbSSD_SelectionChanged"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="8">
                 <TextBlock  Text="CPU кулер" Width="155"/>
-                <ComboBox Width="120" Name="CmbCPUCooler"/>
+                <ComboBox Width="120" Name="CmbCPUCooler" SelectionChanged="CmbCPUCooler_SelectionChanged"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="8">
                 <TextBlock  Text="Коробка" Width="155"/>
-                <ComboBox Width="120" Name="CmbCase"/>
+                <ComboBox Width="120" Name="CmbCase" SelectionChanged="CmbCase_SelectionChanged"/>
         
             </StackPanel>
             <Button Name="btncreatepc" Click="btncreatepc_Click" Content="Создать" Background="#FF15F315" Width="100"></Button>

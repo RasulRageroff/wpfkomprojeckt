@@ -21,6 +21,7 @@ namespace komproject.Pages
     /// </summary>
     public partial class PageCreatepc : Page
     {
+         int generalPrice;
 
         public PageCreatepc()
         {
@@ -71,9 +72,9 @@ namespace komproject.Pages
             FrameApp.frmobj.GoBack();
         }
 
+        
 
-
-        private void CmbCPU_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void CmbCPU_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //умные мысли преследовали тебя, но ты оказался быстрее!
             
@@ -81,11 +82,15 @@ namespace komproject.Pages
             var cpuObj = OdbConnectHelper.rspcdb.CPU.Where(x=> x.Id==idCPU).FirstOrDefault();
             
             
-            CmbMth.ItemsSource = OdbConnectHelper.rspcdb.Motherboard.Where(x => x.IdSocket == cpuObj.IdSocket).ToList();
-
-
+            
            
-
+            CmbMth.ItemsSource = OdbConnectHelper.rspcdb.Motherboard.Where(x => x.IdSocket == cpuObj.IdSocket).ToList();
+            //cpu price
+            var cpuPrice = cpuObj.price;
+            pricepc.Text = cpuPrice.ToString();
+           
+    
+            
             
 
         }
@@ -123,10 +128,56 @@ namespace komproject.Pages
             MessageBox.Show("Компьютер создан!");
         }
 
-
-        
-        
+        private void CmbMth_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
             
-        
+             //motherboard price
+
+                var motherboardObj = Convert.ToInt32(CmbMth.SelectedValue);
+
+                var motherboardPrice = OdbConnectHelper.rspcdb.Motherboard.Where(x=> x.Id == motherboardObj).FirstOrDefault();
+
+                var cpuPrice = Convert.ToInt32(pricepc.Text);
+                
+                generalPrice = cpuPrice + Convert.ToInt32(motherboardPrice.Price);
+                pricepc.Text = Convert.ToString(generalPrice);
+
+
+        }
+
+        private void CmbGPU_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CmbOP_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Cmbbp_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CmbHDD_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CmbSSD_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CmbCPUCooler_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CmbCase_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
