@@ -24,6 +24,13 @@
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Comments" Type="nvarchar" MaxLength="350" />
     <Property Name="Price" Type="int" />
+    <Property Name="Socket" Type="nvarchar(max)" />
+    <Property Name="Fandimensions" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fanspeed" Type="nvarchar" MaxLength="50" />
+    <Property Name="Noiselevel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Material" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rotationalspeedmax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fanconnector" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="CPU">
     <Key>
@@ -31,9 +38,13 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Idmanufacturer" Type="int" Nullable="false" />
-    <Property Name="model" Type="nvarchar" MaxLength="50" />
-    <Property Name="price" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="int" />
     <Property Name="IdSocket" Type="int" />
+    <Property Name="CPUCores" Type="int" />
+    <Property Name="Speed" Type="float" />
+    <Property Name="Graphicsintegrated" Type="nvarchar" MaxLength="50" />
+    <Property Name="Threads" Type="int" />
   </EntityType>
   <EntityType Name="CPUmanufacturer">
     <Key>
@@ -49,6 +60,11 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Price" Type="int" />
+    <Property Name="Formfactor" Type="nvarchar" MaxLength="50" />
+    <Property Name="Capacity" Type="nvarchar" MaxLength="50" />
+    <Property Name="InterfaceType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cache" Type="nvarchar" MaxLength="50" />
+    <Property Name="SpindleSpeed" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="IdSocket">
     <Key>
@@ -72,21 +88,17 @@
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="IdSocket" Type="int" />
     <Property Name="Price" Type="int" />
+    <Property Name="Socket" Type="nvarchar" MaxLength="50" />
+    <Property Name="RAMSockets" Type="int" />
+    <Property Name="RAMtechnology" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaxRAM" Type="int" />
+    <Property Name="Formfactor" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="PC">
     <Key>
-      <PropertyRef Name="IdPc" />
-      <PropertyRef Name="IdCPU" />
-      <PropertyRef Name="IdMotherboard" />
-      <PropertyRef Name="IdVideocard" />
-      <PropertyRef Name="IdRAM" />
-      <PropertyRef Name="IdPCPOWERSupplyUNIT" />
-      <PropertyRef Name="IdHDD" />
-      <PropertyRef Name="IdSSD" />
-      <PropertyRef Name="IdCooling" />
-      <PropertyRef Name="IdCase" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="IdPc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="IdCPU" Type="int" Nullable="false" />
     <Property Name="IdMotherboard" Type="int" Nullable="false" />
@@ -99,6 +111,7 @@
     <Property Name="IdCase" Type="int" Nullable="false" />
     <Property Name="price" Type="int" />
     <Property Name="likes" Type="int" />
+    <Property Name="rel" Type="int" />
   </EntityType>
   <EntityType Name="pcpowersupply">
     <Key>
@@ -107,15 +120,25 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Price" Type="int" />
+    <Property Name="Power" Type="nvarchar" MaxLength="50" />
+    <Property Name="FormFactor" Type="nvarchar" MaxLength="50" />
+    <Property Name="PFC" Type="nvarchar" MaxLength="50" />
+    <Property Name="SATAConnectors" Type="int" />
+    <Property Name="certificate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fans" Type="int" />
+    <Property Name="Fansize" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="RAM">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nchar" MaxLength="10" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Price" Type="int" />
     <Property Name="Idtype" Type="int" />
+    <Property Name="Capacity" Type="nvarchar" MaxLength="50" />
+    <Property Name="RAMSpeed" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -131,6 +154,9 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Price" Type="int" />
+    <Property Name="ReadingSpeed" Type="nvarchar" MaxLength="50" />
+    <Property Name="Writingspeed" Type="nvarchar" MaxLength="50" />
+    <Property Name="Formfactor" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -150,6 +176,7 @@
     <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="IdRole" Type="int" Nullable="false" />
+    <Property Name="idpc" Type="int" />
   </EntityType>
   <EntityType Name="Videocard">
     <Key>
@@ -158,6 +185,12 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Price" Type="int" />
+    <Property Name="VRAM" Type="nvarchar" MaxLength="50" />
+    <Property Name="VRAMType" Type="nvarchar" MaxLength="50" />
+    <Property Name="BusWidth" Type="int" />
+    <Property Name="Recommendedpowersupply" Type="nvarchar" MaxLength="50" />
+    <Property Name="GPUBaseClock" Type="nvarchar" MaxLength="50" />
+    <Property Name="GPUBoostClock" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_Case_CaseForm">
     <End Role="CaseForm" Type="Self.CaseForm" Multiplicity="0..1" />
@@ -303,6 +336,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_PC_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="PC" Type="Self.PC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PC">
+        <PropertyRef Name="rel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_PC_Videocard">
     <End Role="Videocard" Type="Self.Videocard" Multiplicity="1" />
     <End Role="PC" Type="Self.PC" Multiplicity="*" />
@@ -324,6 +369,18 @@
       </Principal>
       <Dependent Role="RAM">
         <PropertyRef Name="Idtype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_PC">
+    <End Role="PC" Type="Self.PC" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PC">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="idpc" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -405,6 +462,10 @@
       <End Role="SSD" EntitySet="SSD" />
       <End Role="PC" EntitySet="PC" />
     </AssociationSet>
+    <AssociationSet Name="FK_PC_User" Association="Self.FK_PC_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="PC" EntitySet="PC" />
+    </AssociationSet>
     <AssociationSet Name="FK_PC_Videocard" Association="Self.FK_PC_Videocard">
       <End Role="Videocard" EntitySet="Videocard" />
       <End Role="PC" EntitySet="PC" />
@@ -412,6 +473,10 @@
     <AssociationSet Name="FK_RAM_memorytype" Association="Self.FK_RAM_memorytype">
       <End Role="memorytype" EntitySet="memorytype" />
       <End Role="RAM" EntitySet="RAM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_PC" Association="Self.FK_User_PC">
+      <End Role="PC" EntitySet="PC" />
+      <End Role="User" EntitySet="User" />
     </AssociationSet>
     <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
       <End Role="Role" EntitySet="Role" />

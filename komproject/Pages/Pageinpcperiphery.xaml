@@ -1,0 +1,60 @@
+﻿<Page x:Class="komproject.Pages.Pageinpcperiphery"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:komproject.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Pageinpcperiphery">
+
+    <Grid >
+        <StackPanel >
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="5">
+                <Button  Name="BtnGoback" Click="BtnGoback_Click" Width="50" Height="35" Margin="5" Background="Black" FontFamily="Segoe Print" Foreground="white">Назад</Button>
+
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0 0 0 40">
+                <TextBlock FontFamily="Segoe Print" FontSize="17" FontWeight="Bold" HorizontalAlignment="Center" Padding="0 10 0 10">Список комплектующих</TextBlock>
+                <ComboBox Name="Listperiphery" SelectionChanged="Listperiphery_SelectionChanged" HorizontalAlignment="Center" Width="170" FontFamily="Segoe Print" BorderBrush="White">
+                    <ComboBoxItem Name="CPUbox">Процессор</ComboBoxItem>
+                    <ComboBoxItem Name="MTHbox">Материнская плата</ComboBoxItem>
+                    <ComboBoxItem Name="VCRDbox">Видеокарта</ComboBoxItem>
+                    <ComboBoxItem Name="RAMbox">Оперативная память</ComboBoxItem>
+                    <ComboBoxItem Name="BPbox">Блок питания</ComboBoxItem>
+                    <ComboBoxItem Name="HDDbox">Жесткий диск</ComboBoxItem>
+                    <ComboBoxItem Name="SSDbox">SSD накопитель</ComboBoxItem>
+                    <ComboBoxItem Name="COOLERbox">CPU Кулер</ComboBoxItem>
+                    
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel>
+
+                <DataGrid  Name="GridList" IsReadOnly="True" FontFamily="Segoe Print" AutoGenerateColumns="False" VerticalScrollBarVisibility="Auto" Height="290">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Название" Width="*" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Header="Цена" Width="*" Binding="{Binding Price}"/>
+                        <DataGridTemplateColumn Width="*">
+
+                            <DataGridTemplateColumn.CellTemplate>
+
+                                <DataTemplate>
+                                    <Button Name="Btninformation"  Click="Btninformation_Click" Foreground="White" Background="Black" FontFamily="Segoe Print" Content="Подробнее">
+
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </StackPanel>
+
+        </StackPanel>
+       
+
+    </Grid>
+</Page>

@@ -24,6 +24,13 @@ namespace komproject.DataFiles
         public string Name { get; set; }
         public string Comments { get; set; }
         public Nullable<int> Price { get; set; }
+        public string Socket { get; set; }
+        public string Fandimensions { get; set; }
+        public string Fanspeed { get; set; }
+        public string Noiselevel { get; set; }
+        public string Material { get; set; }
+        public string Rotationalspeedmax { get; set; }
+        public string Fanconnector { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PC> PC { get; set; }

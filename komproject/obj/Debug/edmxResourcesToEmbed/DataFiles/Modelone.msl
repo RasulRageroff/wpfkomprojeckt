@@ -22,6 +22,13 @@
     <EntitySetMapping Name="Cooling">
       <EntityTypeMapping TypeName="RasulpcModel.Cooling">
         <MappingFragment StoreEntitySet="Cooling">
+          <ScalarProperty Name="Fanconnector" ColumnName="Fanconnector" />
+          <ScalarProperty Name="Rotationalspeedmax" ColumnName="Rotationalspeedmax" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="Noiselevel" ColumnName="Noiselevel" />
+          <ScalarProperty Name="Fanspeed" ColumnName="Fanspeed" />
+          <ScalarProperty Name="Fandimensions" ColumnName="Fandimensions" />
+          <ScalarProperty Name="Socket" ColumnName="Socket" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Comments" ColumnName="Comments" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -32,9 +39,13 @@
     <EntitySetMapping Name="CPU">
       <EntityTypeMapping TypeName="RasulpcModel.CPU">
         <MappingFragment StoreEntitySet="CPU">
+          <ScalarProperty Name="Threads" ColumnName="Threads" />
+          <ScalarProperty Name="Graphicsintegrated" ColumnName="Graphicsintegrated" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="CPUCores" ColumnName="CPUCores" />
           <ScalarProperty Name="IdSocket" ColumnName="IdSocket" />
-          <ScalarProperty Name="price" ColumnName="price" />
-          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Idmanufacturer" ColumnName="Idmanufacturer" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
@@ -51,6 +62,11 @@
     <EntitySetMapping Name="HDD">
       <EntityTypeMapping TypeName="RasulpcModel.HDD">
         <MappingFragment StoreEntitySet="HDD">
+          <ScalarProperty Name="SpindleSpeed" ColumnName="SpindleSpeed" />
+          <ScalarProperty Name="Cache" ColumnName="Cache" />
+          <ScalarProperty Name="InterfaceType" ColumnName="InterfaceType" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="Formfactor" ColumnName="Formfactor" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -76,6 +92,11 @@
     <EntitySetMapping Name="Motherboard">
       <EntityTypeMapping TypeName="RasulpcModel.Motherboard">
         <MappingFragment StoreEntitySet="Motherboard">
+          <ScalarProperty Name="Formfactor" ColumnName="Formfactor" />
+          <ScalarProperty Name="MaxRAM" ColumnName="MaxRAM" />
+          <ScalarProperty Name="RAMtechnology" ColumnName="RAMtechnology" />
+          <ScalarProperty Name="RAMSockets" ColumnName="RAMSockets" />
+          <ScalarProperty Name="Socket" ColumnName="Socket" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="IdSocket" ColumnName="IdSocket" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -86,6 +107,7 @@
     <EntitySetMapping Name="PC">
       <EntityTypeMapping TypeName="RasulpcModel.PC">
         <MappingFragment StoreEntitySet="PC">
+          <ScalarProperty Name="rel" ColumnName="rel" />
           <ScalarProperty Name="likes" ColumnName="likes" />
           <ScalarProperty Name="price" ColumnName="price" />
           <ScalarProperty Name="IdCase" ColumnName="IdCase" />
@@ -98,13 +120,20 @@
           <ScalarProperty Name="IdMotherboard" ColumnName="IdMotherboard" />
           <ScalarProperty Name="IdCPU" ColumnName="IdCPU" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="IdPc" ColumnName="IdPc" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="pcpowersupply">
       <EntityTypeMapping TypeName="RasulpcModel.pcpowersupply">
         <MappingFragment StoreEntitySet="pcpowersupply">
+          <ScalarProperty Name="Fansize" ColumnName="Fansize" />
+          <ScalarProperty Name="Fans" ColumnName="Fans" />
+          <ScalarProperty Name="certificate" ColumnName="certificate" />
+          <ScalarProperty Name="SATAConnectors" ColumnName="SATAConnectors" />
+          <ScalarProperty Name="PFC" ColumnName="PFC" />
+          <ScalarProperty Name="FormFactor" ColumnName="FormFactor" />
+          <ScalarProperty Name="Power" ColumnName="Power" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -114,6 +143,9 @@
     <EntitySetMapping Name="RAM">
       <EntityTypeMapping TypeName="RasulpcModel.RAM">
         <MappingFragment StoreEntitySet="RAM">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="RAMSpeed" ColumnName="RAMSpeed" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
           <ScalarProperty Name="Idtype" ColumnName="Idtype" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -132,6 +164,9 @@
     <EntitySetMapping Name="SSD">
       <EntityTypeMapping TypeName="RasulpcModel.SSD">
         <MappingFragment StoreEntitySet="SSD">
+          <ScalarProperty Name="Formfactor" ColumnName="Formfactor" />
+          <ScalarProperty Name="Writingspeed" ColumnName="Writingspeed" />
+          <ScalarProperty Name="ReadingSpeed" ColumnName="ReadingSpeed" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Id" ColumnName="Id" />
@@ -152,6 +187,7 @@
     <EntitySetMapping Name="User">
       <EntityTypeMapping TypeName="RasulpcModel.User">
         <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="idpc" ColumnName="idpc" />
           <ScalarProperty Name="IdRole" ColumnName="IdRole" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Login" ColumnName="Login" />
@@ -162,6 +198,12 @@
     <EntitySetMapping Name="Videocard">
       <EntityTypeMapping TypeName="RasulpcModel.Videocard">
         <MappingFragment StoreEntitySet="Videocard">
+          <ScalarProperty Name="GPUBoostClock" ColumnName="GPUBoostClock" />
+          <ScalarProperty Name="GPUBaseClock" ColumnName="GPUBaseClock" />
+          <ScalarProperty Name="Recommendedpowersupply" ColumnName="Recommendedpowersupply" />
+          <ScalarProperty Name="BusWidth" ColumnName="BusWidth" />
+          <ScalarProperty Name="VRAMType" ColumnName="VRAMType" />
+          <ScalarProperty Name="VRAM" ColumnName="VRAM" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Id" ColumnName="Id" />

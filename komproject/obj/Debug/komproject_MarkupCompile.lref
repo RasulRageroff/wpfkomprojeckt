@@ -1,10 +1,20 @@
 ﻿
 
 FC:\Users\Rasulik\source\repos\komproject\komproject\MainWindow.xaml;;
+FC:\Users\Rasulik\source\repos\komproject\komproject\page-pcaccessories-informations\bpinfo.xaml;;
+FC:\Users\Rasulik\source\repos\komproject\komproject\page-pcaccessories-informations\cpucoolerinfo.xaml;;
+FC:\Users\Rasulik\source\repos\komproject\komproject\page-pcaccessories-informations\cpuinfo.xaml;;
+FC:\Users\Rasulik\source\repos\komproject\komproject\page-pcaccessories-informations\hddinfo.xaml;;
+FC:\Users\Rasulik\source\repos\komproject\komproject\page-pcaccessories-informations\motherboardinfo.xaml;;
+FC:\Users\Rasulik\source\repos\komproject\komproject\page-pcaccessories-informations\raminfo.xaml;;
+FC:\Users\Rasulik\source\repos\komproject\komproject\page-pcaccessories-informations\ssdinfo.xaml;;
+FC:\Users\Rasulik\source\repos\komproject\komproject\page-pcaccessories-informations\videocardinfo.xaml;;
+FC:\Users\Rasulik\source\repos\komproject\komproject\Pages\LoginWindows.xaml;;
 FC:\Users\Rasulik\source\repos\komproject\komproject\Pages\Pageadmin.xaml;;
 FC:\Users\Rasulik\source\repos\komproject\komproject\Pages\PageCreatepc.xaml;;
-FC:\Users\Rasulik\source\repos\komproject\komproject\Pages\PageLogin.xaml;;
+FC:\Users\Rasulik\source\repos\komproject\komproject\Pages\Pageinpcperiphery.xaml;;
 FC:\Users\Rasulik\source\repos\komproject\komproject\Pages\PageMenu.xaml;;
-FC:\Users\Rasulik\source\repos\komproject\komproject\Pages\PageRegistration.xaml;;
 FC:\Users\Rasulik\source\repos\komproject\komproject\Pages\pagetopik.xaml;;
+FC:\Users\Rasulik\source\repos\komproject\komproject\Pages\RegistrationWindow.xaml;;
+FC:\Users\Rasulik\source\repos\komproject\komproject\Pages\mycomputerspage.xaml;;
 

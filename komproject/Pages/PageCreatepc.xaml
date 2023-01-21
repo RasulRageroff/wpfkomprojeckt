@@ -10,9 +10,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Собрать комп">
 
-    <Grid Background="white">
+    <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="5">
-            <Button  Name="BtnGoback" Click="BtnGoback_Click" Width="50" Height="35" Margin="5" Background="OrangeRed" FontFamily="Segoe Print">Назад</Button>
+            <Button  Name="BtnGoback" Click="BtnGoback_Click" Width="50" Height="35" Margin="5" Background="Black" FontFamily="Segoe Print" Foreground="White">Назад</Button>
 
         </StackPanel>
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0">
@@ -61,7 +61,7 @@
                 <ComboBox Width="120" Name="CmbCase" SelectionChanged="CmbCase_SelectionChanged"/>
         
             </StackPanel>
-            <Button Name="btncreatepc" Click="btncreatepc_Click" Content="Создать" Background="#FF15F315" Width="100"></Button>
+            <Button Name="btncreatepc" Click="btncreatepc_Click" Content="Создать" Background="White" Width="100"></Button>
         </StackPanel>
         
 

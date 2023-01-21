@@ -24,6 +24,11 @@ namespace komproject.DataFiles
         public string Name { get; set; }
         public Nullable<int> IdSocket { get; set; }
         public Nullable<int> Price { get; set; }
+        public string Socket { get; set; }
+        public Nullable<int> RAMSockets { get; set; }
+        public string RAMtechnology { get; set; }
+        public Nullable<int> MaxRAM { get; set; }
+        public string Formfactor { get; set; }
     
         public virtual IdSocket IdSocket1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

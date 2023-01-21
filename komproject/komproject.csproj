@@ -44,6 +44,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -72,6 +73,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="dataconnect.cs" />
     <Compile Include="DataFiles\Case.cs">
       <DependentUpon>Modelone.tt</DependentUpon>
     </Compile>
@@ -144,6 +146,46 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="page-pcaccessories-informations\bpinfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page-pcaccessories-informations\cpucoolerinfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page-pcaccessories-informations\cpuinfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page-pcaccessories-informations\hddinfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page-pcaccessories-informations\motherboardinfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page-pcaccessories-informations\raminfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page-pcaccessories-informations\ssdinfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page-pcaccessories-informations\videocardinfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LoginWindows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\mycomputerspage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Pageadmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -152,7 +194,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PageLogin.xaml">
+    <Page Include="Pages\Pageinpcperiphery.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,34 +202,66 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PageRegistration.xaml">
+    <Page Include="Pages\pagetopik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\pagetopik.xaml">
+    <Page Include="Pages\RegistrationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="page-pcaccessories-informations\bpinfo.xaml.cs">
+      <DependentUpon>bpinfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page-pcaccessories-informations\cpucoolerinfo.xaml.cs">
+      <DependentUpon>cpucoolerinfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page-pcaccessories-informations\cpuinfo.xaml.cs">
+      <DependentUpon>cpuinfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page-pcaccessories-informations\hddinfo.xaml.cs">
+      <DependentUpon>hddinfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page-pcaccessories-informations\motherboardinfo.xaml.cs">
+      <DependentUpon>motherboardinfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page-pcaccessories-informations\raminfo.xaml.cs">
+      <DependentUpon>raminfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page-pcaccessories-informations\ssdinfo.xaml.cs">
+      <DependentUpon>ssdinfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page-pcaccessories-informations\videocardinfo.xaml.cs">
+      <DependentUpon>videocardinfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoginWindows.xaml.cs">
+      <DependentUpon>LoginWindows.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\mycomputerspage.xaml.cs">
+      <DependentUpon>mycomputerspage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Pageadmin.xaml.cs">
       <DependentUpon>Pageadmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageCreatepc.xaml.cs">
       <DependentUpon>PageCreatepc.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PageLogin.xaml.cs">
-      <DependentUpon>PageLogin.xaml</DependentUpon>
+    <Compile Include="Pages\Pageinpcperiphery.xaml.cs">
+      <DependentUpon>Pageinpcperiphery.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageMenu.xaml.cs">
       <DependentUpon>PageMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PageRegistration.xaml.cs">
-      <DependentUpon>PageRegistration.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\pagetopik.xaml.cs">
       <DependentUpon>pagetopik.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\RegistrationWindow.xaml.cs">
+      <DependentUpon>RegistrationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pictureclass.cs" />
+    <Compile Include="pricekomp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -244,6 +318,12 @@
       <DependentUpon>Modelone.edmx</DependentUpon>
       <LastGenOutput>Modelone.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\sds.png" />
+    <Resource Include="Resources\agar.png" />
+    <Resource Include="Resources\back.png" />
+    <Resource Include="Resources\backmgmsi.png" />
+    <Resource Include="Resources\user.png" />
+    <Resource Include="Resources\azx.png" />
     <Resource Include="Resources\hyperpc.jpg" />
   </ItemGroup>
   <ItemGroup>

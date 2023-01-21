@@ -14,7 +14,13 @@ namespace komproject.DataFiles
     
     public partial class PC
     {
-        public int IdPc { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public PC()
+        {
+            this.User1 = new HashSet<User>();
+        }
+    
+        public int id { get; set; }
         public string Name { get; set; }
         public int IdCPU { get; set; }
         public int IdMotherboard { get; set; }
@@ -27,6 +33,7 @@ namespace komproject.DataFiles
         public int IdCase { get; set; }
         public Nullable<int> price { get; set; }
         public Nullable<int> likes { get; set; }
+        public Nullable<int> rel { get; set; }
     
         public virtual Case Case { get; set; }
         public virtual Cooling Cooling { get; set; }
@@ -36,6 +43,9 @@ namespace komproject.DataFiles
         public virtual pcpowersupply pcpowersupply { get; set; }
         public virtual RAM RAM { get; set; }
         public virtual SSD SSD { get; set; }
+        public virtual User User { get; set; }
         public virtual Videocard Videocard { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> User1 { get; set; }
     }
 }

@@ -1,0 +1,52 @@
+﻿<Window x:Class="komproject.Pages.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:komproject.Pages"
+        mc:Ignorable="d"
+        Title="Окно регистрации" Height="450" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel>
+                <Image Source="/Resources/rapc.jpg" Width="250" Margin="15"/>
+            </StackPanel>
+
+
+            <StackPanel Margin="5 5 5 20">
+                <TextBlock FontFamily="Segoe Print" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center">Окно регистрации</TextBlock>
+                
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                <StackPanel HorizontalAlignment="Center">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Логин" FontSize="18px" FontFamily="Segoe Print"  Foreground="Black" HorizontalAlignment="Center" FontWeight="Bold"/>
+                        <TextBox Name="TxbLogin" Width="170" Height="41" Text="" FontFamily="Segoe Print" FontSize="25"/>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Пароль"  FontSize="18px" FontFamily="Segoe Print" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"/>
+                        <PasswordBox Name="Psbpassword" Width="170" Height="41" FontSize="25"/>
+                        
+
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0 0 0 10">
+                        <TextBlock Text="Повторите Пароль" FontSize="18px" FontFamily="Segoe Print" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"/>
+                        <PasswordBox Name="secondpsbpassword" Width="170" Height="41" FontSize="25" PasswordChanged="secondpsbpassword_PasswordChanged"/>
+
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                        <Button Name="Btnregistration" Click="Btnregistration_Click" Background="Black" Width="150" Height="35" Margin="5" Foreground="White" FontFamily="Segoe Print">Создать</Button>
+                    </StackPanel>
+                </StackPanel>
+
+
+            </StackPanel>
+
+            
+
+        </StackPanel>
+    </Grid>
+</Window>

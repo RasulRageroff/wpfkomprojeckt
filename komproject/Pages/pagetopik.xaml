@@ -8,9 +8,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="pagetopik">
 
-    <Grid Background="White">
+    <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="15" Height="50" Width="70">
-            <Button  Name="btnback" Click="btnback_Click" Width="50" Height="35" Margin="5" Background="OrangeRed" FontFamily="Segoe Print">Назад</Button>
+            <Button  Name="btnback" Click="btnback_Click" Width="50" Height="35" Margin="5" Background="Black" FontFamily="Segoe Print" Foreground="White" >Назад</Button>
 
         
         </StackPanel>

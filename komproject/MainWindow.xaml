@@ -5,28 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:komproject"
         mc:Ignorable="d"
-        Title="Rasul PC" Height="450" Width="800">
+        Title="Rasul PC" Height="640" Width="870" ResizeMode="NoResize">
     <Grid>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="43*"/>
-            <RowDefinition Height="174*"/>
+            <RowDefinition Height="73*"/>
+            <RowDefinition Height="551*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="./Resources/rapc.jpg" Width="150"/>
-                <Image Source="./Resources/731984.png"/>
-                <Image Source="./Resources/2.png"/>
-                <Image Width="150" Source="./Resources/as.png"/>
-                
-                <TextBlock FontFamily="Segoe Print" FontSize="20" Foreground="BlueViolet" Background="Black" VerticalAlignment="Center" Margin="20 0 0 0" Text="{Binding ElementName=FrmMain, Path=Content.Title}"></TextBlock>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" >
+
+            <StackPanel Orientation="Horizontal" >
+
+                <Image Source="./Resources/rapc.jpg" Width="150"  Margin="20 0 0 0"/>
+                <TextBlock FontFamily="Segoe Print" FontSize="20" Foreground="Black"  VerticalAlignment="Center" Margin="180 0 25 0" Text="{Binding ElementName=FrmMain, Path=Content.Title}" ></TextBlock>
+                <StackPanel Width="190" Orientation="Horizontal"  Margin="230 0 0 0">
+                    <Image Name="UserPicture" Width="65" Height="auto" Source="./Resources/user.png"/>
+                    <TextBlock Name="UserNames" FontFamily="Segoe Print" FontWeight="Bold" FontSize="15" Margin="5" Height="20" Width="110"></TextBlock>
+                </StackPanel>
+
+
             </StackPanel>
-            
+
+        </StackPanel>
+        <StackPanel Grid.Row="1" Margin="0,15,0,0">
+
+            <Image Source="./Resources/sds.png" Width="1000" Opacity="0.2"/>
         </StackPanel>
         <Frame
           NavigationUIVisibility="Hidden"
           Name="FrmMain"
-          Grid.Column="1"
-          Grid.Row="1"
-          Background="Lime"/>
+          Grid.Row="1" Margin="0,15,0,0"
+          />
     </Grid>
 </Window>

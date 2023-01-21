@@ -14,10 +14,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static komproject.dataconnect;
+using static komproject.Pages.LoginWindows;
 
 namespace komproject
 {
-    /// <summary>
+    /// <summary> 
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
@@ -25,10 +27,21 @@ namespace komproject
         public MainWindow()
         {
             InitializeComponent();
-
+            
+            UserNames.Text = dataconnect.nicknames;
             FrameApp.frmobj = FrmMain;
             OdbConnectHelper.rspcdb = new RasulpcEntities1();
-            FrmMain.Navigate(new PageLogin());
+            FrmMain.Navigate(new PageMenu());
+            
+            
+            
+
+
+
+
         }
+
+        
+        
     }
 }

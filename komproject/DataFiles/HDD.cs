@@ -23,6 +23,11 @@ namespace komproject.DataFiles
         public int Id { get; set; }
         public string Name { get; set; }
         public Nullable<int> Price { get; set; }
+        public string Formfactor { get; set; }
+        public string Capacity { get; set; }
+        public string InterfaceType { get; set; }
+        public string Cache { get; set; }
+        public string SpindleSpeed { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PC> PC { get; set; }

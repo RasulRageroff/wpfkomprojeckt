@@ -24,6 +24,10 @@ namespace komproject.Pages
         public PageMenu()
         {
             InitializeComponent();
+
+           
+
+           
         }
 
         private void Createpc_Click(object sender, RoutedEventArgs e)
@@ -43,7 +47,17 @@ namespace komproject.Pages
 
         private void BtnGoback_Click(object sender, RoutedEventArgs e)
         {
-            FrameApp.frmobj.GoBack();
+           /////exit
+        }
+
+        private void Mycomputers_Click(object sender, RoutedEventArgs e)
+        {
+            FrameApp.frmobj.Navigate(new mycomputerspage());
+        }
+
+        private void PCaccessories_Click(object sender, RoutedEventArgs e)
+        {
+            FrameApp.frmobj.Navigate(new Pageinpcperiphery());
         }
     }
 }

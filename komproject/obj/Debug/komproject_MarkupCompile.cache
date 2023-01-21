@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Rasulik\source\repos\komproject\komproject\App.xaml
-7-1232203531
+17-1531523770
 21855043939
-33-1896969218
-18-251642827
-MainWindow.xaml;Pages\Pageadmin.xaml;Pages\PageCreatepc.xaml;Pages\PageLogin.xaml;Pages\PageMenu.xaml;Pages\PageRegistration.xaml;Pages\pagetopik.xaml;
+46-1872535699
+19-597282236
+MainWindow.xaml;page-pcaccessories-informations\bpinfo.xaml;page-pcaccessories-informations\cpucoolerinfo.xaml;page-pcaccessories-informations\cpuinfo.xaml;page-pcaccessories-informations\hddinfo.xaml;page-pcaccessories-informations\motherboardinfo.xaml;page-pcaccessories-informations\raminfo.xaml;page-pcaccessories-informations\ssdinfo.xaml;page-pcaccessories-informations\videocardinfo.xaml;Pages\LoginWindows.xaml;Pages\mycomputerspage.xaml;Pages\Pageadmin.xaml;Pages\PageCreatepc.xaml;Pages\Pageinpcperiphery.xaml;Pages\PageMenu.xaml;Pages\pagetopik.xaml;Pages\RegistrationWindow.xaml;
 
 False
 

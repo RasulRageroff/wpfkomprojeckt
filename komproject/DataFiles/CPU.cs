@@ -22,9 +22,13 @@ namespace komproject.DataFiles
     
         public int Id { get; set; }
         public int Idmanufacturer { get; set; }
-        public string model { get; set; }
-        public Nullable<int> price { get; set; }
+        public string Name { get; set; }
+        public Nullable<int> Price { get; set; }
         public Nullable<int> IdSocket { get; set; }
+        public Nullable<int> CPUCores { get; set; }
+        public Nullable<double> Speed { get; set; }
+        public string Graphicsintegrated { get; set; }
+        public Nullable<int> Threads { get; set; }
     
         public virtual CPUmanufacturer CPUmanufacturer { get; set; }
         public virtual IdSocket IdSocket1 { get; set; }

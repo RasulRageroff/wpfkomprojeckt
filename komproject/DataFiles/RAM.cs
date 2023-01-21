@@ -24,6 +24,9 @@ namespace komproject.DataFiles
         public string Name { get; set; }
         public Nullable<int> Price { get; set; }
         public Nullable<int> Idtype { get; set; }
+        public string Capacity { get; set; }
+        public string RAMSpeed { get; set; }
+        public string Type { get; set; }
     
         public virtual memorytype memorytype { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
